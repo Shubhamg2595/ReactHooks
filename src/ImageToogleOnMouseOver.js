@@ -18,7 +18,10 @@ const ImageToogleOnMouseOver = ({ primaryImg, secondaryImg }) => {
                 {
                     imageRef.current.src = primaryImg;
                 } }
-            alt="" />
+            alt=""
+            width="300"
+            height="300"
+            />
         </>
     )
 }
