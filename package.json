@@ -1,19 +1,30 @@
 {
-  "name": "react_hooks",
+  "name": "React-App-Learning-React-Hooks",
   "version": "1.0.0",
-  "description": "PluralSight_ReactHooks_Course",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-	  "dev" : "next",
-	  "build": "next build",
-	  "start": "next start"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
-  "author": "Shubham Gupta",
+  "keywords": [],
+  "author": "Peter Kellner",
   "license": "ISC",
   "dependencies": {
-    "next": "^9.3.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "@zeit/next-css": "^1.0.1",
+    "bootstrap": "^4.3.1",
+    "next": "^8.0.3",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-toastify": "^4.5.2"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.5.0",
+    "prettier": "1.16.4",
+    "react-hooks": "^1.0.1",
+    "react-performance": "0.0.5"
   }
 }

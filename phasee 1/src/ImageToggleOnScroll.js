@@ -1,20 +1,21 @@
-import React, {useRef, useEffect, useState} from "react";
+import React, { useRef, useEffect, useState } from 'react';
+
 
 const ImageToggleOnScroll = ({ primaryImg, secondaryImg }) => {
 
+
     const imageRef = useRef(null);
-    const [isLoading,setIsLoading] = useState(true);
 
     useEffect(() => {
         window.addEventListener("scroll", scrollHandler);
-        setInView(isInView());
-        setIsLoading(false);
-        return ( () => {
+        setInView(inView);
+        return (() => {
             window.removeEventListener("scroll", scrollHandler);
-        });
-    },[isLoading]);
+        })
 
-    const [inView,setInView] = useState(false);
+    }, [])
+
+    const [inView, setInView] = useState(false);
 
     const isInView = () => {
         if (imageRef.current) {
@@ -22,20 +23,30 @@ const ImageToggleOnScroll = ({ primaryImg, secondaryImg }) => {
             return rect.top >= 0 && rect.bottom <= window.innerHeight;
         }
         return false;
-    };
+    }
 
     const scrollHandler = () => {
         setInView(() => {
             return isInView();
-        });
-    };
+        })
+    }
 
-    return isLoading ? null : (
-        <img
-            src={inView ? secondaryImg : primaryImg}
-            alt="" ref={imageRef} width="200" height="200"
-        />
-    );
-};
+    console.log('inView',inView)
+    console.log('primary',primaryImg)
+    console.log('secondaryImg',secondaryImg)
+
+    return (
+        <>
+            <h1>sadasdsa</h1>
+            <img src={inView ? secondaryImg : primaryImg}
+                ref={imageRef}
+                alt=""
+                width="300"
+                height="300"
+            />
+        </>
+    )
+}
+
 
 export default ImageToggleOnScroll;
