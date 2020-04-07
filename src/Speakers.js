@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useReducer } from "react";
+import React, { useState, useEffect, useContext, useReducer, useCallback, useMemo } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../static/site.css";
@@ -14,7 +14,7 @@ const Speakers = ({ }) => {
   const [speakingSaturday, setSpeakingSaturday] = useState(true);
   const [speakingSunday, setSpeakingSunday] = useState(true);
 
-  
+
   // const [speakerList, setSpeakerList] = useState([]);
   const [speakerList, dispatch] = useReducer(SpeakersReducer, []);
 
@@ -48,27 +48,29 @@ const Speakers = ({ }) => {
     setSpeakingSaturday(!speakingSaturday);
   };
 
+  const newSpeakerList = useMemo(() => speakerList
+    .filter(
+      ({ sat, sun }) => (speakingSaturday && sat) || (speakingSunday && sun)
+    )
+    .sort(function (a, b) {
+      if (a.firstName < b.firstName) {
+        return -1;
+      }
+      if (a.firstName > b.firstName) {
+        return 1;
+      }
+      return 0;
+    }));
+
   const speakerListFiltered = isLoading
     ? []
-    : speakerList
-      .filter(
-        ({ sat, sun }) => (speakingSaturday && sat) || (speakingSunday && sun)
-      )
-      .sort(function (a, b) {
-        if (a.firstName < b.firstName) {
-          return -1;
-        }
-        if (a.firstName > b.firstName) {
-          return 1;
-        }
-        return 0;
-      });
+    : newSpeakerList;
 
   const handleChangeSunday = () => {
     setSpeakingSunday(!speakingSunday);
   };
 
-  const heartFavoriteHandler = (e, favoriteValue) => {
+  const heartFavoriteHandler = useCallback((e, favoriteValue) => {
     e.preventDefault();
     const sessionId = parseInt(e.target.attributes["data-sessionid"].value);
     dispatch({
@@ -83,7 +85,7 @@ const Speakers = ({ }) => {
     //   return item;
     // }));
     //console.log("changing session favorte to " + favoriteValue);
-  };
+  }, []);
 
   if (isLoading) return <div>Loading...</div>;
 
