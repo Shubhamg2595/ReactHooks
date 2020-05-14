@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import MouseContainer from './Container/MouseContainer';
+import HookInterval from './Components/IntervalHookWithUseEffect3';
 
 function App() {
   return (
     <div className="App">
-      <MouseContainer />
+      <HookInterval />
     </div>
   );
 }
