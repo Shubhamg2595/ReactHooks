@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import HookWithObjects from './Components/HookWithObject';
+import HooksWithArrays from './Components/HooksWithArrays';
 
 function App() {
   return (
     <div className="App">
-      <HookWithObjects />
+      <HooksWithArrays />
     </div>
   );
 }
