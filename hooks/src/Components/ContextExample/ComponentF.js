@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserContext } from '../../App'
+import { UserContext, ChannelContext } from '../../App'
 
 function ComponentF() {
     return (
@@ -9,11 +9,24 @@ function ComponentF() {
                     {
                         userName => {
                             return (
-                                <>
-                                {console.log(userName)}
-                                    <h6>UserName received via context</h6>
-                                    <p> {userName} </p>.
-                        </>
+                                <ChannelContext.Consumer>
+                                    {
+                                        channelCreator => {
+                                            return (
+                                                <>
+                                                {console.log(userName)}
+                                                <h6>UserName received via context</h6>
+                                                <p> {userName} </p>.
+
+                                                <h6>ChannelCreator Name via context</h6>
+                                                <p> {channelCreator} </p>.
+                                                
+                                    </>
+                                            )
+                                        }
+                                    }
+                                </ChannelContext.Consumer>
+                               
                             )
                         }
                     }
