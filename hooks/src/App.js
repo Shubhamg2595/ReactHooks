@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import HooksWithArrays from './Components/HooksWithArrays';
+import UseEffectWithCounter1 from './Components/UseEffectWithCounter1';
 
 function App() {
   return (
     <div className="App">
-      <HooksWithArrays />
+      <UseEffectWithCounter1 />
     </div>
   );
 }
