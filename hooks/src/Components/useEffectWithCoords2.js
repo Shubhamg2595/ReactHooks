@@ -8,12 +8,17 @@ function UseEffectWithCoords2() {
 
 
     function logMousePosition(e) {
+        console.log('Mouse is moving')
+
         setCoords({ ...coords, x: e.clientX, y: e.clientY });
     }
 
 
     useEffect(() => {
-        window.addEventListener('mousemove', logMousePosition)
+        window.addEventListener('mousemove', logMousePosition);
+        return () => {
+            window.removeEventListener('mousemove',logMousePosition)
+        }
     },[])
 
 
