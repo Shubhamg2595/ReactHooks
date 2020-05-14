@@ -1,11 +1,16 @@
 import React from 'react';
 import './App.css';
-import HookInterval from './Components/IntervalHookWithUseEffect3';
+import ComponentC from './Components/ContextExample/ComponentC';
+
+
+export const UserContext = React.createContext();
 
 function App() {
   return (
     <div className="App">
-      <HookInterval />
+      <UserContext.Provider value={'Shubham'}>
+        <ComponentC />
+      </UserContext.Provider>
     </div>
   );
 }
