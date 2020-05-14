@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import UseEffectWithCounter1 from './Components/UseEffectWithCounter1';
+import UseEffectWithCoords2 from './Components/useEffectWithCoords2';
 
 function App() {
   return (
     <div className="App">
-      <UseEffectWithCounter1 />
+      <UseEffectWithCoords2 />
     </div>
   );
 }
