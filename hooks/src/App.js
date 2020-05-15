@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ParentComponent from './Components/UseCallBackHook/ParentComponent';
+import Counter from './Components/useMemoHook/Counter';
 
 
 
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <ParentComponent />
+      <Counter />
 
     </div>
   );
