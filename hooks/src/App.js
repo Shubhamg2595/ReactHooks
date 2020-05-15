@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Counter from './Components/useMemoHook/Counter';
+import FocusInput from './Components/UseRefHook/FocusInput';
 
 
 
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <Counter />
+      <FocusInput />
 
     </div>
   );
