@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import DataFetching from './Components/UseReducer/DataFetching/DataFetching';
+import ParentComponent from './Components/UseCallBackHook/ParentComponent';
 
 
 
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <DataFetching />
+      <ParentComponent />
 
     </div>
   );
