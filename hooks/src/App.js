@@ -1,19 +1,13 @@
 import React from 'react';
 import './App.css';
-import CounterOne from './Components/UseReducer/counterOne';
+import CounterTwo from './Components/UseReducer/CounterTwo';
 
-
-// export const UserContext = React.createContext();
-// export const ChannelContext = React.createContext();
 
 function App() {
   return (
     <div className="App">
-      {/* <UserContext.Provider value={'Shubham'}> */}
-        {/* <ChannelContext.Provider value={'byShubhamGupta'}> */}
-          <CounterOne />
-        {/* </ChannelContext.Provider> */}
-      {/* </UserContext.Provider> */}
+          <CounterTwo />
+   
     </div>
   );
 }
