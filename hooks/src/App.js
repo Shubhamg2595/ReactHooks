@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import FocusInput from './Components/UseRefHook/FocusInput';
+import Timer from './Components/UseRefHook/Timer';
 
 
 
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <FocusInput />
+      <Timer />
 
     </div>
   );
