@@ -3,7 +3,7 @@ import { useCounter } from './Hooks/useCounterHook';
 
 
 export default function CounterOne() {
-    const [count, increment, decrement, reset] = useCounter();
+    const [count, increment, decrement, reset] = useCounter(10,10);
 
     return (
         <div>
