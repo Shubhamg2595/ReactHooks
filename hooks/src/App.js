@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import Timer from './Components/UseRefHook/Timer';
+import CounterOne from './Components/CustomHooks/CounterOne';
+import DocTitleTwo from './Components/CustomHooks/CounterTwo';
 
 
 
@@ -12,7 +13,8 @@ function App() {
 
   return (
     <div className="App">
-      <Timer />
+      <CounterOne />
+      <DocTitleTwo />
 
     </div>
   );
